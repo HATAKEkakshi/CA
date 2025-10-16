@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Virtual CA Agent Platform",
+  "description": "A web application that serves as a user interface for a multi-agent system designed for accounting, tax, and compliance tasks. Users can interact with specialized AI agents to handle various financial and legal processes.",
+  "requestFramePermissions": []
+}
