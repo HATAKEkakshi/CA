@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { cn } from '../utils';
 
 interface InputBarProps {
   onSendMessage: (content: string) => void;
@@ -31,7 +31,7 @@ const InputBar: React.FC<InputBarProps> = ({ onSendMessage, isLoading }) => {
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Type your message here..."
-        className="flex-1 p-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white dark:bg-gray-800 resize-none"
+        className="flex-1 p-2 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:outline-none bg-background resize-none"
         rows={1}
         disabled={isLoading}
         style={{ maxHeight: '150px' }}
@@ -39,9 +39,13 @@ const InputBar: React.FC<InputBarProps> = ({ onSendMessage, isLoading }) => {
       <button
         type="submit"
         disabled={isLoading || !inputValue.trim()}
-        className="p-2 rounded-full bg-indigo-500 text-white hover:bg-indigo-600 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+        className={cn(
+          "p-2 rounded-full transition-colors",
+          "bg-primary text-primary-foreground hover:bg-primary/90",
+          "disabled:bg-muted disabled:cursor-not-allowed"
+        )}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </button>
