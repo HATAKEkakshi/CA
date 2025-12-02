@@ -42,9 +42,9 @@ This platform utilizes **Google Gemini AI** as the core agentic framework, imple
 
 3. **Set up environment variables**
    ```bash
-   cp .env.local.example .env.local
+   cp .env.example .env
    ```
-   Add your Gemini API key to `.env.local`:
+   Add your Gemini API key to `.env`:
    ```
    GEMINI_API_KEY=your_gemini_api_key_here
    ```
